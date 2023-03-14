@@ -1,0 +1,81 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "ICS",
+    "patterns": [
+      {
+        "match": "(BEGIN|END)(:)(VCALENDAR)",
+        "captures": {
+          "1": {
+            "name": "punctuation.definition.tag.begin.ics"
+          },
+          "2": {
+            "name": "punctuation.separator.key-value.ics"
+          },
+          "3": {
+            "name": "entity.name.tag.ics"
+          }
+        }
+      },
+      {
+        "match": "(BEGIN|END)(:)(VEVENT)",
+        "captures": {
+          "1": {
+            "name": "punctuation.definition.tag.begin.ics"
+          },
+          "2": {
+            "name": "punctuation.separator.key-value.ics"
+          },
+          "3": {
+            "name": "entity.name.tag.ics"
+          }
+        }
+      },
+      {
+        "match": "(VERSION|PRODID|CALSCALE)(:)(.*)",
+        "captures": {
+          "1": {
+            "name": "support.type.property-name.ics"
+          },
+          "2": {
+            "name": "punctuation.separator.key-value.ics"
+          },
+          "3": {
+            "name": "string.quoted.double.ics"
+          }
+        }
+      },
+      {
+        "match": "(DTSTART|DTEND)(.*)(:)(.*)",
+        "captures": {
+          "1": {
+            "name": "support.type.property-name.ics"
+          },
+          "2": {
+            "name": "meta.property-value.ics"
+          },
+          "3": {
+            "name": "punctuation.separator.key-value.ics"
+          },
+          "4": {
+            "name": "constant.numeric.ics"
+          }
+        }
+      },
+      {
+        "match": "(SUMMARY|DESCRIPTION|LOCATION|STATUS)(:)(.*)",
+        "captures": {
+          "1": {
+            "name": "support.type.property-name.ics"
+          },
+          "2": {
+            "name": "punctuation.separator.key-value.ics"
+          },
+          "3": {
+            "name": "string.quoted.double.ics"
+          }
+        }
+      }
+    ],
+    "scopeName": "source.ics"
+  }
+  
